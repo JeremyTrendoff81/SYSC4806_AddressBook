@@ -1,0 +1,5 @@
+org\lab3\AddressBook.class
+org\lab3\AddressBookRepository.class
+org\lab3\AccessingDataJpaApplication.class
+org\lab3\BuddyInfo.class
+org\lab3\BuddyInfoRepository.class
