@@ -1,4 +1,4 @@
-package org.lab4;
+package org.lab5;
 
 import jakarta.persistence.*;
 
@@ -119,8 +119,8 @@ public class BuddyInfo {
     @Override
     public String toString() {
         return "BuddyInfo{" +
-                "name='" + name + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
+                "name=" + name +
+                ", phoneNumber=" + phoneNumber +
                 '}';
     }
 }

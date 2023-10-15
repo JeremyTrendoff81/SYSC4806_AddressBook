@@ -1,4 +1,4 @@
-package org.lab4;
+package org.lab5;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,9 +12,18 @@ public class AddressBookGUIController {
     @Autowired
     AddressBookRepository addressBookRepository;
 
+    @Autowired
+    BuddyInfoRepository buddyInfoRepository;
+
     @GetMapping("/lab4GuiTemplate")
     public String getAddressBookBuddyInfos(@RequestParam(name = "id", required = false, defaultValue = "1") String id, Model model) {
         model.addAttribute("addressBookResult", addressBookRepository.findById(Long.parseLong(id)));
         return "lab4GuiTemplate";
+    }
+
+    @GetMapping("/getBuddyByName")
+    public String getBuddyByName(@RequestParam(name = "name", required = false, defaultValue = "Steve") String name, Model model) {
+        model.addAttribute("buddyByNameResult", buddyInfoRepository.findByName(name));
+        return "getBuddyByName";
     }
 }
