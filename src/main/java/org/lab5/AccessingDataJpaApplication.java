@@ -38,50 +38,50 @@ public class AccessingDataJpaApplication {
             // Save the AddressBook
             addressBookRepository.save(addressBook);
 
-            // Fetch the AddressBook by ID
-            AddressBook addressBook1 = addressBookRepository.findById(1L);
-            log.info("AddressBook found with findById(1L):");
-            log.info("--------------------------------");
-            log.info(addressBook1.toString());
-            log.info("");
-
-            /*
-            * When using this line, buddies must be persisted first before address book. Then, in address book
-            * change the cascade type to MERGE.
-            */
-
-            // Save the BuddyInfo buddies.
-            buddyInfoRepository.saveAll(buddies);
-
-            // Fetch all buddies
-            log.info("BuddyInfo's found with findAll():");
-            log.info("-------------------------------");
-            for (BuddyInfo buddyInfo : buddyInfoRepository.findAll()) {
-                log.info(buddyInfo.toString());
-            }
-            log.info("");
-
-            // Fetch Individual Buddy By ID
-            BuddyInfo buddyInfo = buddyInfoRepository.findById(1L);
-            log.info("Buddy found with findById(1L):");
-            log.info("--------------------------------");
-            log.info(buddyInfo.toString());
-            log.info("");
-
-            // Fetch Individual Buddy By Name
-            buddyInfo = buddyInfoRepository.findByName("Mary");
-            log.info("Buddy found with findByName('Mary'):");
-            log.info("--------------------------------");
-            log.info(buddyInfo.toString());
-            log.info("");
-
-
-            // Fetch Individual Buddy By Phone Number
-            buddyInfo = buddyInfoRepository.findByPhoneNumber("613-555-5555");
-            log.info("Buddy found with findByPhoneNumber('613-555-5555'):");
-            log.info("--------------------------------");
-            log.info(buddyInfo.toString());
-            log.info("");
+//            // Fetch the AddressBook by ID
+//            AddressBook addressBook1 = addressBookRepository.findById(1L);
+//            log.info("AddressBook found with findById(1L):");
+//            log.info("--------------------------------");
+//            log.info(addressBook1.toString());
+//            log.info("");
+//
+//            /*
+//            * When using this line, buddies must be persisted first before address book. Then, in address book
+//            * change the cascade type to MERGE.
+//            */
+//
+//            // Save the BuddyInfo buddies.
+//            buddyInfoRepository.saveAll(buddies);
+//
+//            // Fetch all buddies
+//            log.info("BuddyInfo's found with findAll():");
+//            log.info("-------------------------------");
+//            for (BuddyInfo buddyInfo : buddyInfoRepository.findAll()) {
+//                log.info(buddyInfo.toString());
+//            }
+//            log.info("");
+//
+//            // Fetch Individual Buddy By ID
+//            BuddyInfo buddyInfo = buddyInfoRepository.findById(1L);
+//            log.info("Buddy found with findById(1L):");
+//            log.info("--------------------------------");
+//            log.info(buddyInfo.toString());
+//            log.info("");
+//
+//            // Fetch Individual Buddy By Name
+//            buddyInfo = buddyInfoRepository.findByName("Mary");
+//            log.info("Buddy found with findByName('Mary'):");
+//            log.info("--------------------------------");
+//            log.info(buddyInfo.toString());
+//            log.info("");
+//
+//
+//            // Fetch Individual Buddy By Phone Number
+//            buddyInfo = buddyInfoRepository.findByPhoneNumber("613-555-5555");
+//            log.info("Buddy found with findByPhoneNumber('613-555-5555'):");
+//            log.info("--------------------------------");
+//            log.info(buddyInfo.toString());
+//            log.info("");
         };
     }
 }
