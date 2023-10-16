@@ -23,11 +23,11 @@ public class AccessingDataJpaApplication {
         return (args) -> {
             // Set up a list of buddies.
             ArrayList<BuddyInfo> buddies = new ArrayList<>();
-            buddies.add(new BuddyInfo("Steve", "613-555-1111"));
-            buddies.add(new BuddyInfo("John", "613-555-2222"));
-            buddies.add(new BuddyInfo("Mary", "613-555-3333"));
-            buddies.add(new BuddyInfo("Kate", "613-555-4444"));
-            buddies.add(new BuddyInfo("David", "613-555-5555"));
+            buddies.add(new BuddyInfo("Steve", "100 Street St", "613-555-1111"));
+            buddies.add(new BuddyInfo("John", "101 Street St", "613-555-2222"));
+            buddies.add(new BuddyInfo("Mary", "102 Street St", "613-555-3333"));
+            buddies.add(new BuddyInfo("Kate", "103 Street St", "613-555-4444"));
+            buddies.add(new BuddyInfo("David", "104 Street St", "613-555-5555"));
 
             // Set the AddressBook
             AddressBook addressBook = new AddressBook();

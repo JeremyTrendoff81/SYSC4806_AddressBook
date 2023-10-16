@@ -26,4 +26,10 @@ public class AddressBookGUIController {
         model.addAttribute("buddyByNameResult", buddyInfoRepository.findByName(name));
         return "getBuddyByName";
     }
+
+    @GetMapping("/getBuddyByAddress")
+    public String getBuddyByAddress(@RequestParam(name = "address", required = false, defaultValue = "100 Street St") String address, Model model) {
+        model.addAttribute("buddyByAddressResult", buddyInfoRepository.findByAddress(address));
+        return "getBuddyByAddress";
+    }
 }

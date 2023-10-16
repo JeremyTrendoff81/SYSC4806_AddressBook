@@ -21,7 +21,7 @@ public class BuddyInfoTest {
      */
     @Before
     public void setUp() {
-        testBuddy = new BuddyInfo("Test", "Test");
+        testBuddy = new BuddyInfo("Test", "Test", "Test");
     }
 
     /**

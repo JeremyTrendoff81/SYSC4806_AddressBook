@@ -22,6 +22,11 @@ public class BuddyInfo {
     private String phoneNumber;
 
     /**
+     * Your Buddy's Address
+     */
+    private String address;
+
+    /**
      * Buddy's ID.
      */
     private Long id;
@@ -30,7 +35,7 @@ public class BuddyInfo {
      * Default Constructor. Sets default name and phone number.
      */
     public BuddyInfo() {
-        this("AddName", "AddNumber");
+        this("AddName", "AddAddress", "AddNumber");
     }
 
     /**
@@ -38,8 +43,9 @@ public class BuddyInfo {
      * @param name String, The name of your buddy.
      * @param phoneNumber String, the phone number of your buddy.
      */
-    public BuddyInfo(String name, String phoneNumber) {
+    public BuddyInfo(String name, String address, String phoneNumber) {
         this.name = name;
+        this.address = address;
         this.phoneNumber = phoneNumber;
     }
 
@@ -79,6 +85,14 @@ public class BuddyInfo {
     }
 
     /**
+     * Get your Buddy's Address
+     * @return String, the address.
+     */
+    public String getAddress() {
+        return address;
+    }
+
+    /**
      * Set your buddy's new name.
      * @param name String, your buddy's new name.
      */
@@ -92,6 +106,14 @@ public class BuddyInfo {
      */
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    /**
+     * Set the buddies address*
+     * @param address String, address to set.
+     */
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     /**
@@ -114,13 +136,15 @@ public class BuddyInfo {
     }
 
     /**
-     * Generated toString for better printed description of object.
+     * Provide a String representation of the buddy
+     * @return String, the buddy's string representation.
      */
     @Override
     public String toString() {
         return "BuddyInfo{" +
                 "name=" + name +
                 ", phoneNumber=" + phoneNumber +
+                ", address=" + address +
                 '}';
     }
 }

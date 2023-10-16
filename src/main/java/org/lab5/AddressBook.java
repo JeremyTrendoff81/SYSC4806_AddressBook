@@ -44,8 +44,8 @@ public class AddressBook {
      * @param phoneNumber String, Buddy's Phone Number.
      * @return True if the buddy was added.
      */
-    public boolean addBuddy(String name, String phoneNumber) {
-        BuddyInfo buddyToAdd = new BuddyInfo(name, phoneNumber);
+    public boolean addBuddy(String name, String address, String phoneNumber) {
+        BuddyInfo buddyToAdd = new BuddyInfo(name, address, phoneNumber);
         return buddies.add(buddyToAdd);
     }
 

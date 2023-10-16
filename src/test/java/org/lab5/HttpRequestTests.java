@@ -1,19 +1,11 @@
 package org.lab5;
 
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.ui.Model;
-import org.springframework.web.context.WebApplicationContext;
-
-import java.util.Collection;
-import java.util.Map;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.mockito.Mockito.when;
@@ -38,21 +30,31 @@ public class HttpRequestTests {
     @Test
     public void getAddressBookByID() throws Exception {
         AddressBook testBook = new AddressBook();
-        testBook.addBuddy("Test", "Test");
+        testBook.addBuddy("Test", "Test", "Test");
 
         when(addressBookRepository.findById(1)).thenReturn(testBook);
 
         this.mockMvc.perform(get("/lab4GuiTemplate")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("AddressBook{buddies=[BuddyInfo{name=Test, phoneNumber=Test}]}")));
+                .andExpect(content().string(containsString("AddressBook{buddies=[BuddyInfo{name=Test, phoneNumber=Test, address=Test}]}")));
     }
 
     @Test
     public void getBuddyByName() throws Exception {
-        BuddyInfo testBuddy = new BuddyInfo("Test2", "Test2");
+        BuddyInfo testBuddy = new BuddyInfo("Test2", "Test2", "Test2");
 
         when(buddyInfoRepository.findByName("Steve")).thenReturn(testBuddy);
 
         this.mockMvc.perform(get("/getBuddyByName")).andDo(print()).andExpect(status().isOk())
-                .andExpect(content().string(containsString("BuddyInfo{name=Test2, phoneNumber=Test2}")));
+                .andExpect(content().string(containsString("BuddyInfo{name=Test2, phoneNumber=Test2, address=Test2}")));
+    }
+
+    @Test
+    public void getBuddyByAddress() throws Exception {
+        BuddyInfo testBuddy = new BuddyInfo("Test3", "Test3", "Test3");
+
+        when(buddyInfoRepository.findByAddress("100 Street St")).thenReturn(testBuddy);
+
+        this.mockMvc.perform(get("/getBuddyByAddress")).andDo(print()).andExpect(status().isOk())
+                .andExpect(content().string(containsString("BuddyInfo{name=Test3, phoneNumber=Test3, address=Test3}")));
     }
 }
